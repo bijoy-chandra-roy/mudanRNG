@@ -1,0 +1,100 @@
+/* General Styles */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #faf3e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #5c4f3c;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Headings */
+h1 {
+    color: #cc7351;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #8b7355;
+    margin-bottom: 2rem;
+}
+
+/* Button Styles */
+.random-button {
+    background-color: #e6876a;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 2px 8px rgba(204, 115, 81, 0.2);
+}
+
+.random-button:hover {
+    background-color: #cc7351;
+    transform: translateY(-2px);
+}
+
+.random-button:active {
+    transform: translateY(0);
+}
+
+/* Vlog Card */
+.vlog-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.vlog-card.hidden {
+    opacity: 0;
+    display: none;
+}
+
+/* Link Styles */
+.vlog-title {
+    color: #5c4f3c;
+    margin-bottom: 1rem;
+}
+
+.vlog-link {
+    display: inline-block;
+    background-color: #8b7355;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    transition: background-color 0.2s;
+}
+
+.vlog-link:hover {
+    background-color: #6d5a43;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .random-button {
+        padding: 0.8rem 1.6rem;
+        font-size: 1rem;
+    }
+}
