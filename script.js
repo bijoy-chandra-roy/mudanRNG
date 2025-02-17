@@ -378,12 +378,30 @@ const vlogCard = document.getElementById('vlogCard');
 const vlogTitle = document.getElementById('vlogTitle');
 const vlogLink = document.getElementById('vlogLink');
 
-function getRandomVlog() {
-    const randomIndex = Math.floor(Math.random() * vlogs.length);
-    return vlogs[randomIndex];
+let shuffledVlogs = [...vlogs]; // Copy the original array
+let currentIndex = 0;
+
+// Shuffle the array using Fisher-Yates algorithm
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+shuffleArray(shuffledVlogs);
+
+function getNextVlog() {
+    if (currentIndex >= shuffledVlogs.length) {
+        alert("All vlogs have been shown! Refresh the page to start again.");
+        return null;
+    }
+    return shuffledVlogs[currentIndex++];
 }
 
 function showVlog(vlog) {
+    if (!vlog) return; // Stop if all vlogs have been shown
+
     vlogCard.classList.add('hidden');
     setTimeout(() => {
         vlogTitle.textContent = vlog.title;
@@ -393,6 +411,6 @@ function showVlog(vlog) {
 }
 
 randomButton.addEventListener('click', () => {
-    const randomVlog = getRandomVlog();
-    showVlog(randomVlog);
+    const nextVlog = getNextVlog();
+    showVlog(nextVlog);
 });
