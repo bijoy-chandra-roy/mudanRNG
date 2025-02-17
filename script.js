@@ -361,30 +361,38 @@ const vlogs = [
     { title: "Visiting 3 \"Hidden\" Bars in Shinjuku", url: "https://www.youtube.com/watch?v=p6bA8rjVlv8&list=PLrSx9zOYOPHFZEniDmIzKPEQK19PG4NAy&index=358&pp=iAQB" },
     { title: "I Moved To Japan", url: "https://www.youtube.com/watch?v=RqMX-W3DXgs&list=PLrSx9zOYOPHFZEniDmIzKPEQK19PG4NAy&index=359&pp=iAQB" },
     { title: "getting advice nobody asked for", url: "https://www.youtube.com/watch?v=uq9zNZjo7zY&list=PLrSx9zOYOPHFZEniDmIzKPEQK19PG4NAy&index=360&pp=iAQB" },
-    { title: "recording until my camera runs out of battery", url: "https://www.youtube.com/watch?v=tTWBQOqVAV8&list=PLrSx9zOYOPHFZEniDmIzKPEQK19PG4NAy&index=361&pp=iAQB" }
-  ];
-  
-  const randomButton = document.getElementById('randomButton');
-  const vlogCard = document.getElementById('vlogCard');
-  const vlogTitle = document.getElementById('vlogTitle');
-  const vlogLink = document.getElementById('vlogLink');
-  
-  function getRandomVlog() {
-      const randomIndex = Math.floor(Math.random() * vlogs.length);
-      return vlogs[randomIndex];
-  }
-  
-  function showVlog(vlog) {
-      vlogCard.classList.add('hidden');
-      setTimeout(() => {
-          vlogTitle.textContent = vlog.title;
-          vlogLink.href = vlog.url;
-          vlogCard.classList.remove('hidden');
-      }, 300);
-  }
-  
-  randomButton.addEventListener('click', () => {
-      const randomVlog = getRandomVlog();
-      showVlog(randomVlog);
-  });
-  
+    { title: "recording until my camera runs out of battery", url: "https://www.youtube.com/watch?v=tTWBQOqVAV8&list=PLrSx9zOYOPHFZEniDmIzKPEQK19PG4NAy&index=361&pp=iAQB" },
+    // Final entries: items 362-368
+    { title: "I Tried Fast Food Items that you Can't Get Outside of Japan", url: "https://www.youtube.com/watch?v=9p0QgCf8F4o&list=PLrSx9zOYOPHFZEniDmIzKPEQK19PG4NAy&index=362&pp=iAQB" },
+    { title: "nothing particular happened this day", url: "https://www.youtube.com/watch?v=O5BZLIoiBJg&list=PLrSx9zOYOPHFZEniDmIzKPEQK19PG4NAy&index=363&pp=iAQB" },
+    { title: "this is where I literally live", url: "https://www.youtube.com/watch?v=96IcVp4OwG0&list=PLrSx9zOYOPHFZEniDmIzKPEQK19PG4NAy&index=364&pp=iAQB" },
+    { title: "how to easily get rid of your trash in Japan", url: "https://www.youtube.com/watch?v=FHdylgwnaf4&list=PLrSx9zOYOPHFZEniDmIzKPEQK19PG4NAy&index=365&pp=iAQB" },
+    { title: "giving back the monitor that i \"acquired\"", url: "https://www.youtube.com/watch?v=oH7gnfH8_Ks&list=PLrSx9zOYOPHFZEniDmIzKPEQK19PG4NAy&index=366&pp=iAQB" },
+    { title: "A Day in the Life of Mudan", url: "https://www.youtube.com/watch?v=Z5xITiWFho8&list=PLrSx9zOYOPHFZEniDmIzKPEQK19PG4NAy&index=367&pp=iAQB" },
+    { title: "the end", url: "https://www.youtube.com/watch?v=zHPfkye7GVQ&list=PLrSx9zOYOPHFZEniDmIzKPEQK19PG4NAy&index=368&pp=iAQB" }
+
+];
+
+const randomButton = document.getElementById('randomButton');
+const vlogCard = document.getElementById('vlogCard');
+const vlogTitle = document.getElementById('vlogTitle');
+const vlogLink = document.getElementById('vlogLink');
+
+function getRandomVlog() {
+    const randomIndex = Math.floor(Math.random() * vlogs.length);
+    return vlogs[randomIndex];
+}
+
+function showVlog(vlog) {
+    vlogCard.classList.add('hidden');
+    setTimeout(() => {
+        vlogTitle.textContent = vlog.title;
+        vlogLink.href = vlog.url;
+        vlogCard.classList.remove('hidden');
+    }, 300);
+}
+
+randomButton.addEventListener('click', () => {
+    const randomVlog = getRandomVlog();
+    showVlog(randomVlog);
+});
